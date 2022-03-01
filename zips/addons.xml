@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addons>
+<addon id="repository.bwbuild" name="[COLOR limegreen][B]bwbuild[/B][/COLOR]Wizard Repository" version="2.0" provider-name="bwbuild">
+    <extension point="xbmc.addon.repository" name="[COLOR limegreen][B]bwbuild[/B][/COLOR]Wizard Repository">
+        <dir minversion="18.0" maxversion="18.9.0">
+            <info compressed="false">https://bw905.github.io/leia/zips/addons.xml</info>
+            <checksum>https://bw905.github.io/leia/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://bw905.github.io/leia/zips/</datadir>
+        </dir>
+        <dir minversion="18.9.9">
+            <info compressed="false">https://bw905.github.io/matrix/zips/addons.xml</info>
+            <checksum>https://bw905.github.io/matrix/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://bw905.github.io/matrix/zips/</datadir>
+        </dir>
+    </extension>
+
+    <extension point="xbmc.addon.metadata">
+        <summary>[COLOR limegreen][B]bwbuild[/B][/COLOR]Wizard</summary>
+        <description>The official home of [COLOR limegreen][B]bwbuild[/B][/COLOR]Wizard.</description>
+        <disclaimer></disclaimer>
+        <platform>all</platform>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+        <source>https://bw905.github.io/zips/repository.bwbuild/</source>
+    </extension>
+</addon>
+</addons>
