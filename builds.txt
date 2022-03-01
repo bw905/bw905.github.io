@@ -4,7 +4,7 @@ zip=""
 
 name="bwbuild.1.1"
 version="1.1"
-url="https://www.dropbox.com/s/f1l3ov5i2geg12g/bwbuild.1.1.zip?dl=1"
+url="https://www.dropbox.com/s/0171ie2r6o6bsvn/bwbuild.1.1.zip?dl=1"
 minor="http://"
 gui="url.to.guisettings"
 kodi="19.3"
