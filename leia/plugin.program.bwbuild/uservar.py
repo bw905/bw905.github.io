@@ -17,7 +17,7 @@ ADDONTITLE = '[COLOR limegreen][B]bwbuild[/B][/COLOR]Wizard'
 BUILDERNAME = 'bwbuild'
 EXCLUDES = [ADDON_ID, 'repository.bwbuild']
 # Text File with build info in it. Please read https://github.com/a4k-YOUR NAMEproject/plugin.program.bwbuild/wiki/Installing-Builds
-BUILDFILE = 'http://bwbuild.atwebpages/builds.txt'
+BUILDFILE = 'https://bw905.github.io/builds.txt'
 # How often you would like it to check for build updates in days
 # 0 being every startup of kodi
 UPDATECHECK = 0
@@ -77,7 +77,7 @@ THEME5 = u'[COLOR {color1}]Current Theme:[/COLOR] [COLOR {color2}]{{}}[/COLOR]'.
 # Enable 'Contact' menu item 'Yes' hide or 'No' dont hide
 HIDECONTACT = 'No'
 # You can add \n to do line breaks
-CONTACT = 'Thank you for choosing bwbuild.\n\nContact us at http://bwbuild.atwebpages'
+CONTACT = 'Thank you for choosing bwbuild.\n\nContact us at https://bw905.github.io'
 # Images used for the contact window.  http:// for default icon and fanart
 CONTACTICON = os.path.join(ART, 'qricon.png')
 CONTACTFANART = 'http://'
@@ -98,9 +98,9 @@ AUTOINSTALL = 'Yes'
 # Addon ID for the repository
 REPOID = 'repository.bwbuild'
 # Url to Addons.xml file in your repo folder(this is so we can get the latest version)
-REPOADDONXML = 'http://bwbuild.atwebpages/leia/zips/addons.xml'
+REPOADDONXML = 'https://bw905.github.io/leia/zips/addons.xml'
 # Url to folder zip is located in
-REPOZIPURL = 'http://bwbuild.atwebpages/leia/zips/repository.bwbuild/'
+REPOZIPURL = 'https://bw905.github.io/leia/zips/repository.bwbuild/'
 #########################################################
 
 #########################################################

@@ -19,7 +19,7 @@
         <description lang="en">[COLOR limegreen]bwbuild[/COLOR]Wizard offers many maintenance features, selective add-on data saving, and automated build installs.</description>
         <platform>all</platform>
         <reuselanguageinvoker>false</reuselanguageinvoker>
-        <source>http://bwbuild.atwebpages/zips/repository.bwbuild/</source>
+        <source>https://bw905.github.io/zips/repository.bwbuild/</source>
         <news>
 2.0.7
  - Initial Commit
