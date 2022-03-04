@@ -16,7 +16,7 @@
     
     <extension point="xbmc.addon.metadata">
         <summary lang="en">[COLOR limegreen]bwbuild[/COLOR]Wizard</summary>
-        <description lang="en">[COLOR limegreen]bwbuild[/COLOR]Wizard offers many maintenance features, selective add-on data saving, and automated build installs.</description>
+        <description lang="en">[COLOR limegreen]bwbuild[/COLOR] Wizard offers many maintenance features, selective add-on data saving, and automated build installs. All Builds within require Trakt and Real-Dbrid</description>
         <platform>all</platform>
         <reuselanguageinvoker>false</reuselanguageinvoker>
         <source>https://bw905.github.io/zips/repository.bwbuild/</source>
