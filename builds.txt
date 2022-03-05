@@ -16,7 +16,7 @@ adult="no"
 info="url.to.info"
 description="Build REQUIRES Trakt and Real-Debrid. This build is empty and clean."
 
-name="bwbuild.Rob.2.2.zip (682mb)"
+name="bwbuild.Rob.2.2.zip"
 version="2.2"
 url="https://www.dropbox.com/s/y8r9ik6cqquz32r/bwbuild.Rob.2.2.zip?dl=1"
 minor="http://"
