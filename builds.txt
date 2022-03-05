@@ -2,7 +2,7 @@ id="plugin.program.bwbuild-2.0.7"
 version="2.0.7"
 zip="https://bw905.github.io/zips/plugin.program.bwbuild/"
 
-name="bwbuildClean.2.2.zip (398mb)"
+name="bwbuildClean.2.2.zip"
 version="2.2.1"
 url="https://www.dropbox.com/s/tbhnnl3q7vqp48b/bwbuildClean.2.2.zip?dl=1"
 minor="http://"
@@ -31,7 +31,7 @@ info="url.to.info"
 description="Build REQUIRES Trakt and Real-Debrid. This build is specifically for RP, jya jya jya jya"
 
 
-name="bwbuild.1.1 (242mb)"
+name="bwbuild.1.1"
 version="1.1"
 url="https://www.dropbox.com/s/0171ie2r6o6bsvn/bwbuild.1.1.zip?dl=1"
 minor="http://"
@@ -46,7 +46,7 @@ info="url.to.info"
 description="Build REQUIRES Trakt and Real-Debrid."
 
 
-name="bwbuild.Jeffit.2.2.zip (838mb)"
+name="bwbuild.Jeffit.2.2.zip"
 version="2.1"
 url="https://www.dropbox.com/s/bhpv384cpxwqi83/bwbuild.Jeffit.2.2.zip?dl=1"
 minor="http://"
