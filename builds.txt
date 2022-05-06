@@ -75,9 +75,9 @@ info="url.to.info"
 description="Build REQUIRES Trakt and Real-Debrid."
 
 
-name="bwbuild.Jeffit.2.2.zip"
-version="2.1"
-url="xhttps://www.dropbox.com/s/bhpv384cpxwqi83/bwbuild.Jeffit.2.2.zip?dl=1"
+name="BWJeffit.2.2.3.zip"
+version="2.2.3"
+url="https://www.dropbox.com/s/ye5yli8yod8ovgo/BWJeffit.2.2.3.zip?dl=1"
 minor="http://"
 gui="url.to.guisettings"
 kodi="19.3"
