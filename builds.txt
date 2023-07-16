@@ -33,10 +33,10 @@ description="NEW Umbrella build, lightweight with no library. not for kodi 20 on
 
 name="ChromecastKodi.zip"
 version="3.1.2"
-url="https://www.dropbox.com/scl/fi/goraplh86uvxukidxff7t/ChromecastKodi.zip?rlkey=kkqg6o7xg9y5txtecclvxz922&dl=1"
+url="https://www.dropbox.com/scl/fi/nuqa43co6mtq7uofano8f/ChromecastKodi.zip?rlkey=9c3iqx51vxmr4w14wixvqnc98&dl=1"
 minor="http://"
 gui="url.to.guisettings"
-kodi="19.3"
+kodi="20.2"
 theme="url.to.themes"
 icon="http://"
 fanart="http://"
