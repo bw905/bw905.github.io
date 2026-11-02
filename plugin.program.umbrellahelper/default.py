@@ -50,9 +50,15 @@ def build_menu():
     else:
         trakt_status = "[COLOR red][B]Not Authorized[/B][/COLOR]"
 
+    ICON = ADDON.getAddonInfo('icon')
+    FANART = ADDON.getAddonInfo('fanart')
+
     def add_item(title, action, is_folder=False):
         url = f"{sys.argv[0]}?action={action}"
         li = xbmcgui.ListItem(label=title)
+        li.setArt({'icon': ICON, 'thumb': ICON, 'fanart': FANART, 'poster': ICON})
+        li.setInfo('video', {'title': title, 'plot': title})
+        li.setProperty('IsPlayable', 'false')
         xbmcplugin.addDirectoryItem(handle=ADDON_HANDLE, url=url, listitem=li, isFolder=is_folder)
 
     # --- REAL-DEBRID SECTION ---
