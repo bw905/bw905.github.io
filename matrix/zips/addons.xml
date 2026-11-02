@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addons>
+<addon id="plugin.program.umbrellahelper" name="Umbrella Helper" version="1.0.0" provider-name="bw905">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0" />
+        <import addon="plugin.video.umbrella" />
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>executable</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Quick Auth &amp; Account Helper for Umbrella</summary>
+        <description lang="en">Umbrella Helper provides an instant shortcut to view status, authorize, check accounts, and manage Real-Debrid and Trakt credentials for Umbrella without digging through menus.</description>
+        <platform>all</platform>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+    </extension>
+</addon>
+
 <addon id="plugin.program.bwbuild" name="[COLOR limegreen]bwbuild[/COLOR]Wizard" version="2.0.7" provider-name="bwbuild">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
