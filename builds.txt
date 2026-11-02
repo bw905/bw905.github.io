@@ -1,6 +1,6 @@
-id="plugin.program.bwbuild-2.0.7"
-version="2.0.7"
-zip="https://bw905.github.io/zips/plugin.program.bwbuild/"
+id="plugin.program.bwbuild-2.1.0"
+version="2.1.0"
+zip="https://bw905.github.io/matrix/zips/plugin.program.bwbuild/"
 
 name="BwUbrellaThinv2.zip"
 version="2.0"

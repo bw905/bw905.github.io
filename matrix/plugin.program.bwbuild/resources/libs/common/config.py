@@ -228,14 +228,9 @@ class Config:
         # Video Cache variables
         self.INCLUDEVIDEO = self.get_setting('includevideo')
         self.INCLUDEALL = self.get_setting('includeall')
-        self.INCLUDEEXODUSREDUX = self.get_setting('includeexodusredux')
-        self.INCLUDEGAIA = self.get_setting('includegaia')
+        self.INCLUDEUMBRELLA = self.get_setting('includeumbrella')
         self.INCLUDESEREN = self.get_setting('includeseren')
         self.INCLUDETHECREW = self.get_setting('includethecrew')
-        self.INCLUDEYODA = self.get_setting('includeyoda')
-        self.INCLUDEVENOM = self.get_setting('includevenom')
-        self.INCLUDENUMBERS = self.get_setting('includenumbers')
-        self.INCLUDESCRUBS = self.get_setting('includescrubs')
         
         # Notification variables
         self.NOTIFY = self.get_setting('notify')

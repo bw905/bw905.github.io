@@ -51,37 +51,23 @@
         <setting type="lsep" label="Clearing Video Cache:"/>
         <setting id="includevideo" type="bool" label="Include Video Addons in Clear Cache: " default="true"/>
         <setting id="includeall" type="bool" label="Include All Addons: " default="true" enable="!eq(-1,false)"/>
-        <setting id="includeexodusredux" type="bool" label="Include Exodus Redux DB: " default="true" enable="eq(-1,false)" visible="System.HasAddon(plugin.video.exodusredux)"/>
-        <setting id="includegaia" type="bool" label="Include Gaia Cache DB: " default="true" enable="eq(-2,false)" visible="System.HasAddon(plugin.video.gaia)"/>
-        <setting id="includenumbers" type="bool" label="Include NuMb3r5 Cache DB: " default="true" enable="eq(-3,false)" visible="System.HasAddon(plugin.video.numbersbynumbers)"/>
-        <setting id="includescrubs" type="bool" label="Include Scrubs v2 Cache DB: " default="true" enable="eq(-4,false)" visible="System.HasAddon(plugin.video.scrubsv2)"/>
-        <setting id="includeseren" type="bool" label="Include Seren Cache DB: " default="true" enable="eq(-5,false)" visible="System.HasAddon(plugin.video.seren)"/>
-        <setting id="includethecrew" type="bool" label="Include THE CREW Cache DB: " default="true" enable="eq(-6,false)" visible="System.HasAddon(plugin.video.thecrew)"/>
-        <setting id="includevenom" type="bool" label="Include Venom Cache DB: " default="true" enable="eq(-7,false)" visible="System.HasAddon(plugin.video.venom)"/>
+        <setting id="includeumbrella" type="bool" label="Include Umbrella Cache DB: " default="true" enable="eq(-1,false)" visible="System.HasAddon(plugin.video.umbrella)"/>
+        <setting id="includeseren" type="bool" label="Include Seren Cache DB: " default="true" enable="eq(-2,false)" visible="System.HasAddon(plugin.video.seren)"/>
+        <setting id="includethecrew" type="bool" label="Include THE CREW Cache DB: " default="true" enable="eq(-3,false)" visible="System.HasAddon(plugin.video.thecrew)"/>
 
         <!-- Default settings for Save Data entries -->
-        <setting id="exodusredux" type="text" default="" visible="false"/>
+        <setting id="umbrella" type="text" default="" visible="false"/>
         <setting id="fen" type="text" default="" visible="false"/>
-        <setting id="gaia" type="text" default="" visible="false"/>
-        <setting id="numbers" type="text" default="" visible="false"/>
-        <setting id="openmeta" type="text" default="" visible="false"/>
-        <setting id="premiumizer" type="text" default="" visible="false"/>
-        <setting id="realizer" type="text" default="" visible="false"/>
-        <setting id="scrubs" type="text" default="" visible="false"/>
         <setting id="seren" type="text" default="" visible="false"/>
-        <setting id="shadow" type="text" default="" visible="false"/>
-        <setting id="thecrew" type="text" default="" visible="false"/>
         <setting id="tmdbhelper" type="text" default="" visible="false"/>
         <setting id="trakt" type="text" default="" visible="false"/>
-        <setting id="venom" type="text" default="" visible="false"/>
 
+        <setting id="umbrellard" type="text" default="" visible="false"/>
+        <setting id="umbrellaad" type="text" default="" visible="false"/>
+        <setting id="umbrellapm" type="text" default="" visible="false"/>
         <setting id="fenad" type="text" default="" visible="false"/>
         <setting id="fenpm" type="text" default="" visible="false"/>
         <setting id="fenrd" type="text" default="" visible="false"/>
-        <setting id="gaiaad" type="text" default="" visible="false"/>
-        <setting id="gaiapm" type="text" default="" visible="false"/>
-        <setting id="gaiard" type="text" default="" visible="false"/>
-        <setting id="pmzer" type="text" default="" visible="false"/>
         <setting id="serenad" type="text" default="" visible="false"/>
         <setting id="serenpm" type="text" default="" visible="false"/>
         <setting id="serenpm-oauth" type="text" default="" visible="false"/>
@@ -92,9 +78,6 @@
         <setting id="urlad" type="text" default="" visible="false"/>
         <setting id="urlpm" type="text" default="" visible="false"/>
         <setting id="urlrd" type="text" default="" visible="false"/>
-        <setting id="shadowad" type="text" default="" visible="false"/>
-        <setting id="shadowpm" type="text" default="" visible="false"/>
-        <setting id="shadowrd" type="text" default="" visible="false"/>
 
         <setting id="easynews-fen" type="text" default="" visible="false"/>
         <setting id="furk-fen" type="text" default="" visible="false"/>

@@ -336,29 +336,14 @@ def clear_cache(over=None):
         if CONFIG.INCLUDEALL == 'true':
             files = dbfiles
         else:
-            if CONFIG.INCLUDEEXODUSREDUX == 'true':
-                files.append(os.path.join(CONFIG.ADDON_DATA, 'plugin.video.exodusredux', 'cache.db'))
-                files.append(os.path.join(CONFIG.ADDON_DATA, 'plugin.video.exodusredux', 'meta.5.db'))
-                files.append(os.path.join(CONFIG.ADDON_DATA, 'plugin.video.exodusredux', 'providers.13.db'))
-            if CONFIG.INCLUDEVENOM == 'true':
-                files.append(os.path.join(CONFIG.ADDON_DATA, 'plugin.video.venom', 'cache.db'))
-                files.append(os.path.join(CONFIG.ADDON_DATA, 'plugin.video.venom', 'meta.5.db'))
-                files.append(os.path.join(CONFIG.ADDON_DATA, 'plugin.video.venom', 'providers.13.db'))
-            if CONFIG.INCLUDENUMBERS == 'true':
-                files.append(os.path.join(CONFIG.ADDON_DATA, 'plugin.video.numbersbynumbers', 'cache.db'))
-                files.append(os.path.join(CONFIG.ADDON_DATA, 'plugin.video.numbersbynumbers', 'meta.5.db'))
-                files.append(os.path.join(CONFIG.ADDON_DATA, 'plugin.video.numbersbynumbers', 'providers.13.db'))
-            if CONFIG.INCLUDESCRUBS == 'true':
-                files.append(os.path.join(CONFIG.ADDON_DATA, 'plugin.video.scrubsv2', 'cache.db'))
-                files.append(os.path.join(CONFIG.ADDON_DATA, 'plugin.video.scrubsv2', 'meta.5.db'))
-                files.append(os.path.join(CONFIG.ADDON_DATA, 'plugin.video.scrubsv2', 'providers.13.db'))
+            if CONFIG.INCLUDEUMBRELLA == 'true':
+                files.append(os.path.join(CONFIG.ADDON_DATA, 'plugin.video.umbrella', 'metadata.db'))
+                files.append(os.path.join(CONFIG.ADDON_DATA, 'plugin.video.umbrella', 'providers.db'))
+                files.append(os.path.join(CONFIG.ADDON_DATA, 'plugin.video.umbrella', 'fanarttv.db'))
             if CONFIG.INCLUDETHECREW == 'true':
                 files.append(os.path.join(CONFIG.ADDON_DATA, 'plugin.video.thecrew', 'cache.db'))
                 files.append(os.path.join(CONFIG.ADDON_DATA, 'plugin.video.thecrew', 'meta.5.db'))
                 files.append(os.path.join(CONFIG.ADDON_DATA, 'plugin.video.thecrew', 'providers.13.db'))
-            if CONFIG.INCLUDEGAIA == 'true':
-                files.append(os.path.join(CONFIG.ADDON_DATA, 'plugin.video.gaia', 'cache.db'))
-                files.append(os.path.join(CONFIG.ADDON_DATA, 'plugin.video.gaia', 'meta.db'))
             if CONFIG.INCLUDESEREN == 'true':
                 files.append(os.path.join(CONFIG.ADDON_DATA, 'plugin.video.seren', 'cache.db'))
                 files.append(os.path.join(CONFIG.ADDON_DATA, 'plugin.video.seren', 'torrentScrape.db'))
@@ -485,8 +470,8 @@ def force_text():
 
 
 def toggle_cache(state):
-    cachelist = ['includevideo', 'includeall', 'includeexodusredux', 'includegaia', 'includenumbers', 'includescrubs', 'includeseren', 'includethecrew', 'includevenom']
-    titlelist = ['Include Video Addons', 'Include All Addons', 'Include Exodus Redux', 'Include Gaia', 'Include NuMb3r5', 'Include Scrubs v2', 'Include Seren', 'Include THE CREW', 'Include Venom']
+    cachelist = ['includevideo', 'includeall', 'includeumbrella', 'includeseren', 'includethecrew']
+    titlelist = ['Include Video Addons', 'Include All Addons', 'Include Umbrella', 'Include Seren', 'Include THE CREW']
     if state in ['true', 'false']:
         for item in cachelist:
             CONFIG.set_setting(item, state)

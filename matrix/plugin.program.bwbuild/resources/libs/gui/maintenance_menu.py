@@ -107,41 +107,22 @@ class MaintenanceMenu:
             includeexodusredux = 'true'
             includethecrew = 'true'
             includeyoda = 'true'
-            includevenom = 'true'
-            includenumbers = 'true'
-            includescrubs = 'true'
+            includeumbrella = 'true'
+            includethecrew = 'true'
             includeseren = 'true'
         else:
-            includeexodusredux = 'true' if CONFIG.INCLUDEEXODUSREDUX == 'true' else 'false'
-            includegaia = 'true' if CONFIG.INCLUDEGAIA == 'true' else 'false'
+            includeumbrella = 'true' if CONFIG.INCLUDEUMBRELLA == 'true' else 'false'
             includethecrew = 'true' if CONFIG.INCLUDETHECREW == 'true' else 'false'
-            includeyoda = 'true' if CONFIG.INCLUDEYODA == 'true' else 'false'
-            includevenom = 'true' if CONFIG.INCLUDEVENOM == 'true' else 'false'
-            includenumbers = 'true' if CONFIG.INCLUDENUMBERS == 'true' else 'false'
-            includescrubs = 'true' if CONFIG.INCLUDESCRUBS == 'true' else 'false'
             includeseren = 'true' if CONFIG.INCLUDESEREN == 'true' else 'false'
 
         if includevid == 'true':
             directory.add_file(
                 '--- Include All Video Addons: {0}'.format(includeall.replace('true', on).replace('false', off)),
                 {'mode': 'togglecache', 'name': 'includeall'}, icon=CONFIG.ICONMAINT, themeit=CONFIG.THEME3)
-            if xbmc.getCondVisibility('System.HasAddon(plugin.video.exodusredux)'):
+            if xbmc.getCondVisibility('System.HasAddon(plugin.video.umbrella)'):
                 directory.add_file(
-                    '--- Include Exodus Redux: {0}'.format(
-                        includeexodusredux.replace('true', on).replace('false', off)),
-                    {'mode': 'togglecache', 'name': 'includeexodusredux'}, icon=CONFIG.ICONMAINT, themeit=CONFIG.THEME3)
-            if xbmc.getCondVisibility('System.HasAddon(plugin.video.gaia)'):
-                directory.add_file(
-                    '--- Include Gaia: {0}'.format(includegaia.replace('true', on).replace('false', off)),
-                    {'mode': 'togglecache', 'name': 'includegaia'}, icon=CONFIG.ICONMAINT, themeit=CONFIG.THEME3)
-            if xbmc.getCondVisibility('System.HasAddon(plugin.video.numbersbynumbers)'):
-                directory.add_file(
-                    '--- Include NuMb3r5: {0}'.format(includenumbers.replace('true', on).replace('false', off)),
-                    {'mode': 'togglecache', 'name': 'includenumbers'}, icon=CONFIG.ICONMAINT, themeit=CONFIG.THEME3)
-            if xbmc.getCondVisibility('System.HasAddon(plugin.video.scrubsv2)'):
-                directory.add_file(
-                    '--- Include Scrubs v2: {0}'.format(includescrubs.replace('true', on).replace('false', off)),
-                    {'mode': 'togglecache', 'name': 'includescrubs'}, icon=CONFIG.ICONMAINT, themeit=CONFIG.THEME3)
+                    '--- Include Umbrella: {0}'.format(includeumbrella.replace('true', on).replace('false', off)),
+                    {'mode': 'togglecache', 'name': 'includeumbrella'}, icon=CONFIG.ICONMAINT, themeit=CONFIG.THEME3)
             if xbmc.getCondVisibility('System.HasAddon(plugin.video.seren)'):
                 directory.add_file(
                     '--- Include Seren: {0}'.format(includeseren.replace('true', on).replace('false', off)),
@@ -150,14 +131,6 @@ class MaintenanceMenu:
                 directory.add_file(
                     '--- Include THE CREW: {0}'.format(includethecrew.replace('true', on).replace('false', off)),
                     {'mode': 'togglecache', 'name': 'includethecrew'}, icon=CONFIG.ICONMAINT, themeit=CONFIG.THEME3)
-            if xbmc.getCondVisibility('System.HasAddon(plugin.video.venom)'):
-                directory.add_file(
-                    '--- Include Venom: {0}'.format(includevenom.replace('true', on).replace('false', off)),
-                    {'mode': 'togglecache', 'name': 'includevenom'}, icon=CONFIG.ICONMAINT, themeit=CONFIG.THEME3)
-            if xbmc.getCondVisibility('System.HasAddon(plugin.video.yoda)'):
-                directory.add_file(
-                    '--- Include Yoda: {0}'.format(includeyoda.replace('true', on).replace('false', off)),
-                    {'mode': 'togglecache', 'name': 'includeyoda'}, icon=CONFIG.ICONMAINT, themeit=CONFIG.THEME3)
             directory.add_file('--- Enable All Video Addons', {'mode': 'togglecache', 'name': 'true'}, icon=CONFIG.ICONMAINT,
                                themeit=CONFIG.THEME3)
             directory.add_file('--- Disable All Video Addons', {'mode': 'togglecache', 'name': 'false'}, icon=CONFIG.ICONMAINT,
