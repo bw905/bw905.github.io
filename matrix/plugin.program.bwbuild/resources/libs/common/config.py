@@ -211,6 +211,8 @@ class Config:
         self.EXTERROR = self.get_setting('errors')
         
         # View variables
+        self.SHOW21 = self.get_setting('show21')
+        self.SHOW20 = self.get_setting('show20')
         self.SHOW19 = self.get_setting('show19')
         self.SHOWADULT = self.get_setting('adult')
         self.SEPARATE = self.get_setting('separate')
