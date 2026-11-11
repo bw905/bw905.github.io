@@ -5,15 +5,19 @@
 """
 
 import sys
+import os
 import urllib.parse
 import xbmc
 import xbmcgui
 import xbmcplugin
 import xbmcaddon
+import xbmcvfs
 
 ADDON = xbmcaddon.Addon()
 ADDON_ID = ADDON.getAddonInfo('id')
 ADDON_HANDLE = int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1] else -1
+ADDON_PATH = xbmcvfs.translatePath(ADDON.getAddonInfo('path'))
+ART_DIR = os.path.join(ADDON_PATH, 'resources', 'art')
 
 def get_umbrella():
     try:
@@ -50,42 +54,92 @@ def build_menu():
     else:
         trakt_status = "[COLOR red][B]Not Authorized[/B][/COLOR]"
 
-    ICON = ADDON.getAddonInfo('icon')
     FANART = ADDON.getAddonInfo('fanart')
 
-    def add_item(title, action, is_folder=False):
+    def add_item(title, action, art_file, plot=''):
         url = f"{sys.argv[0]}?action={action}"
         li = xbmcgui.ListItem(label=title)
-        li.setArt({'icon': ICON, 'thumb': ICON, 'fanart': FANART, 'poster': ICON})
-        li.setInfo('video', {'title': title, 'plot': title})
+        thumb_path = os.path.join(ART_DIR, art_file)
+        if not os.path.exists(thumb_path):
+            thumb_path = ADDON.getAddonInfo('icon')
+        li.setArt({
+            'icon': thumb_path,
+            'thumb': thumb_path,
+            'fanart': FANART,
+            'poster': thumb_path,
+            'landscape': thumb_path
+        })
+        li.setInfo('video', {'title': title, 'plot': plot})
         li.setProperty('IsPlayable', 'false')
-        xbmcplugin.addDirectoryItem(handle=ADDON_HANDLE, url=url, listitem=li, isFolder=is_folder)
+        xbmcplugin.addDirectoryItem(handle=ADDON_HANDLE, url=url, listitem=li, isFolder=False)
 
     # --- REAL-DEBRID SECTION ---
-    add_item(f"[COLOR dodgerblue][B]═══ REAL-DEBRID: {rd_status} ═══[/B][/COLOR]", 'rd_info')
-    add_item("  [COLOR gold]▸[/COLOR] [B]Authorize Real-Debrid[/B] [I](Umbrella)[/I]", 'rd_auth')
-    add_item("  [COLOR gold]▸[/COLOR] View Real-Debrid Account Info & Days", 'rd_info')
-    add_item("  [COLOR gold]▸[/COLOR] [COLOR crimson]Revoke / Log Out Real-Debrid[/COLOR]", 'rd_revoke')
-
-    # Separator
-    add_item("[COLOR dimgray]────────────────────────────────────────────[/COLOR]", 'none')
+    add_item(
+        f"Real-Debrid: {rd_status}",
+        'rd_info',
+        'rd_info.png',
+        f"Real-Debrid Account: {rd_status} (Click to check account info and days remaining)"
+    )
+    add_item(
+        "Authorize Real-Debrid",
+        'rd_auth',
+        'rd_auth.png',
+        "Pair and authorize your Real-Debrid account with Umbrella"
+    )
+    add_item(
+        "Revoke Real-Debrid",
+        'rd_revoke',
+        'rd_revoke.png',
+        "Disconnect and revoke Real-Debrid credentials from Umbrella"
+    )
 
     # --- TRAKT SECTION ---
-    add_item(f"[COLOR crimson][B]═══ TRAKT: {trakt_status} ═══[/B][/COLOR]", 'trakt_info')
-    add_item("  [COLOR gold]▸[/COLOR] [B]Authorize Trakt[/B] [I](Umbrella)[/I]", 'trakt_auth')
-    add_item("  [COLOR gold]▸[/COLOR] View Trakt Account Info", 'trakt_info')
-    add_item("  [COLOR gold]▸[/COLOR] [COLOR crimson]Revoke / Log Out Trakt[/COLOR]", 'trakt_revoke')
+    add_item(
+        f"Trakt: {trakt_status}",
+        'trakt_info',
+        'trakt_info.png',
+        f"Trakt.tv Account: {trakt_status} (Click to check account and scrobble info)"
+    )
+    add_item(
+        "Authorize Trakt",
+        'trakt_auth',
+        'trakt_auth.png',
+        "Pair and authorize your Trakt.tv account with Umbrella"
+    )
+    add_item(
+        "Revoke Trakt",
+        'trakt_revoke',
+        'trakt_revoke.png',
+        "Disconnect and revoke Trakt.tv credentials from Umbrella"
+    )
 
-    # Separator
-    add_item("[COLOR dimgray]────────────────────────────────────────────[/COLOR]", 'none')
+    # --- SETTINGS & MAINTENANCE ---
+    add_item(
+        "Umbrella Settings",
+        'umbrella_settings',
+        'umbrella_settings.png',
+        "Open full Umbrella addon settings and scraper configuration"
+    )
+    add_item(
+        "Clear Scrapers Cache",
+        'clear_sources',
+        'clear_sources.png',
+        "Wipe cached scrapers, provider domains, and torrent host resolutions"
+    )
+    add_item(
+        "Clear All Umbrella Cache",
+        'clear_all',
+        'clear_all.png',
+        "Clear all cached metadata, search queries, and provider caches in Umbrella"
+    )
+    add_item(
+        "Refresh Status",
+        'refresh',
+        'refresh.png',
+        "Refresh authorization status and reload widgets on the home screen"
+    )
 
-    # --- SHORTCUTS & MAINTENANCE ---
-    add_item("  [COLOR mediumpurple]▸[/COLOR] [B]Open Full Umbrella Settings[/B]", 'umbrella_settings')
-    add_item("  [COLOR mediumpurple]▸[/COLOR] Clear Scrapers & Providers Cache", 'clear_sources')
-    add_item("  [COLOR mediumpurple]▸[/COLOR] Clear All Umbrella Cache", 'clear_all')
-    add_item("  [COLOR deepskyblue]▸[/COLOR] [B]Refresh Status[/B]", 'refresh')
-
-    xbmcplugin.setContent(ADDON_HANDLE, 'files')
+    xbmcplugin.setContent(ADDON_HANDLE, 'videos')
     xbmcplugin.endOfDirectory(ADDON_HANDLE)
 
 def router(paramstring):
