@@ -4,7 +4,7 @@ zip="https://bw905.github.io/matrix/zips/plugin.program.bwbuild/"
 
 name="BwUbrellaThinv2.zip"
 version="2.1"
-url="https://www.dropbox.com/scl/fi/ilxko0o5lull8y9djizv5/BwUbrellaThinv2.zip?rlkey=ym3790vet2mu94iu8jwt9989v&dl=1"
+url="https://www.dropbox.com/scl/fi/6mm8fdbix557ozj25gulm/BwUbrellaThinv2.zip?rlkey=3vnvjksj4zyavhirwdvlat570&dl=1"
 minor="http://"
 gui="url.to.guisettings"
 kodi="21.0"
@@ -18,7 +18,7 @@ description="NEW Umbrella v2.1 Thin Build with BW Umbrestuary Skin, Jellyfin, Tr
 
 name="BwUbrellaThinv2 (Nexus).zip"
 version="2.1"
-url="https://www.dropbox.com/scl/fi/ilxko0o5lull8y9djizv5/BwUbrellaThinv2.zip?rlkey=ym3790vet2mu94iu8jwt9989v&dl=1"
+url="https://www.dropbox.com/scl/fi/6mm8fdbix557ozj25gulm/BwUbrellaThinv2.zip?rlkey=3vnvjksj4zyavhirwdvlat570&dl=1"
 minor="http://"
 gui="url.to.guisettings"
 kodi="20.0"
