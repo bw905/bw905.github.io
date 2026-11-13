@@ -13,9 +13,11 @@ import xbmcplugin
 import xbmcaddon
 import xbmcvfs
 
+from cm_helper import run_collection, run_rescrape
+
 ADDON = xbmcaddon.Addon()
 ADDON_ID = ADDON.getAddonInfo('id')
-ADDON_HANDLE = int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1] else -1
+ADDON_HANDLE = int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].lstrip('-').isdigit() else -1
 ADDON_PATH = xbmcvfs.translatePath(ADDON.getAddonInfo('path'))
 ART_DIR = os.path.join(ADDON_PATH, 'resources', 'art')
 
@@ -69,7 +71,9 @@ def build_menu():
             'poster': thumb_path,
             'landscape': thumb_path
         })
-        li.setInfo('video', {'title': title, 'plot': plot})
+        info_tag = li.getVideoInfoTag()
+        info_tag.setTitle(title)
+        info_tag.setPlot(plot)
         li.setProperty('IsPlayable', 'false')
         xbmcplugin.addDirectoryItem(handle=ADDON_HANDLE, url=url, listitem=li, isFolder=False)
 
@@ -144,10 +148,20 @@ def build_menu():
 
 def router(paramstring):
     params = dict(urllib.parse.parse_qsl(paramstring.lstrip('?')))
-    action = params.get('action')
+    action = params.get('action') or params.get('mode')
 
     if not action or action == 'none':
-        build_menu()
+        if ADDON_HANDLE >= 0:
+            build_menu()
+    elif action == 'cm_collection_add':
+        xbmc.executebuiltin('Dialog.Close(contextmenu)')
+        run_collection(remove=False)
+    elif action == 'cm_collection_remove':
+        xbmc.executebuiltin('Dialog.Close(contextmenu)')
+        run_collection(remove=True)
+    elif action == 'cm_rescrape':
+        xbmc.executebuiltin('Dialog.Close(contextmenu)')
+        run_rescrape()
     elif action == 'rd_auth':
         xbmc.executebuiltin('RunPlugin(plugin://plugin.video.umbrella/?action=rd_Authorize)')
     elif action == 'rd_info':
@@ -178,4 +192,5 @@ def router(paramstring):
         xbmc.executebuiltin('Container.Refresh')
 
 if __name__ == '__main__':
-    router(sys.argv[2] if len(sys.argv) > 2 else '')
+    raw_arg = sys.argv[2] if len(sys.argv) > 2 else (sys.argv[1] if len(sys.argv) > 1 and not sys.argv[1].lstrip('-').isdigit() else '')
+    router(raw_arg)

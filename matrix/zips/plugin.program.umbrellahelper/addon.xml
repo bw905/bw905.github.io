@@ -1,11 +1,36 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.program.umbrellahelper" name="Umbrella Helper" version="1.0.0" provider-name="bw905">
+<addon id="plugin.program.umbrellahelper" name="Umbrella Helper" version="1.0.1" provider-name="bw905">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="plugin.video.umbrella" />
     </requires>
     <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>executable</provides>
+    </extension>
+    <extension point="kodi.context.item">
+        <menu id="kodi.core.main">
+            <item library="cm_collection_add.py">
+                <label>Add to Collection</label>
+                <visible>
+                    [String.StartsWith(ListItem.FolderPath,plugin://plugin.video.umbrella/) | String.StartsWith(ListItem.FileNameAndPath,plugin://plugin.video.umbrella/) | String.StartsWith(ListItem.Path,plugin://plugin.video.umbrella/)] +
+                    [String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.DBTYPE,tvshow) | String.IsEqual(ListItem.DBTYPE,season) | String.IsEqual(ListItem.DBTYPE,movie)]
+                </visible>
+            </item>
+            <item library="cm_collection_remove.py">
+                <label>Remove from Collection</label>
+                <visible>
+                    [String.StartsWith(ListItem.FolderPath,plugin://plugin.video.umbrella/) | String.StartsWith(ListItem.FileNameAndPath,plugin://plugin.video.umbrella/) | String.StartsWith(ListItem.Path,plugin://plugin.video.umbrella/)] +
+                    [String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.DBTYPE,tvshow) | String.IsEqual(ListItem.DBTYPE,season) | String.IsEqual(ListItem.DBTYPE,movie)]
+                </visible>
+            </item>
+            <item library="cm_rescrape.py">
+                <label>Re-scrape</label>
+                <visible>
+                    [String.StartsWith(ListItem.FolderPath,plugin://plugin.video.umbrella/?action=play) | String.StartsWith(ListItem.FileNameAndPath,plugin://plugin.video.umbrella/?action=play) | String.StartsWith(ListItem.Path,plugin://plugin.video.umbrella/?action=play)] +
+                    [String.IsEqual(ListItem.DBTYPE,episode) | String.IsEqual(ListItem.DBTYPE,movie)]
+                </visible>
+            </item>
+        </menu>
     </extension>
     <extension point="xbmc.addon.metadata">
         <summary lang="en">Quick Auth &amp; Account Helper for Umbrella</summary>

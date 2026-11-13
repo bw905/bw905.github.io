@@ -107,7 +107,7 @@ REPOZIPURL = 'https://bw905.github.io/matrix/zips/repository.bwbuild'
 #        Notification Window                            #
 #########################################################
 # Enable Notification screen Yes or No
-ENABLE = 'Yes'
+ENABLE = 'No'
 # Url to notification file
 NOTIFICATION = 'http://'
 # Use either 'Text' or 'Image'

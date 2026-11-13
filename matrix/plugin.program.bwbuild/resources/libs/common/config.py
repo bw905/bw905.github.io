@@ -277,14 +277,18 @@ class Config:
         self.LOGEMAIL = self.get_setting('email')
         self.NEXTCLEANDATE = self.get_setting('nextwizcleandate')
 
-    def get_setting(self, key, id=xbmcaddon.Addon().getAddonInfo('id')):
+    def get_setting(self, key, id=None):
         try:
+            if id is None or id == self.ADDON_ID:
+                return self.ADDON.getSetting(key)
             return xbmcaddon.Addon(id).getSetting(key)
         except:
             return False
 
-    def set_setting(self, key, value, id=xbmcaddon.Addon().getAddonInfo('id')):
+    def set_setting(self, key, value, id=None):
         try:
+            if id is None or id == self.ADDON_ID:
+                return self.ADDON.setSetting(key, value)
             return xbmcaddon.Addon(id).setSetting(key, value)
         except:
             return False

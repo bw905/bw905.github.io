@@ -18,6 +18,7 @@
 ################################################################################
 
 import xbmc
+import xbmcaddon
 import xbmcgui
 
 import time
@@ -26,6 +27,19 @@ from datetime import timedelta
 
 import os
 import sys
+
+# Defer background wizard startup checks on normal boots so Home widgets load first without contention
+try:
+    _bw_addon = xbmcaddon.Addon('plugin.program.bwbuild')
+    if (
+        _bw_addon.getSetting('first_install') != 'true'
+        and _bw_addon.getSetting('installed') not in ('false', 'true')
+        and _bw_addon.getSetting('enable_all') != 'true'
+    ):
+        if xbmc.Monitor().waitForAbort(30):
+            sys.exit()
+except Exception:
+    pass
 
 try:  # Python 3
     from urllib.parse import quote_plus
@@ -341,7 +355,7 @@ else:
     logging.log("[First Run] Skipping Save Data Settings", level=xbmc.LOGINFO)
 
 # BUILD INSTALL PROMPT
-if tools.open_url(CONFIG.BUILDFILE, check=True) and CONFIG.get_setting('installed') == 'false':
+if CONFIG.get_setting('installed') == 'false' and tools.open_url(CONFIG.BUILDFILE, check=True):
     logging.log("[Current Build Check] Build Not Installed", level=xbmc.LOGINFO)
     window.show_build_prompt()
 else:
